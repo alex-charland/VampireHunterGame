@@ -1918,3 +1918,4 @@ Received Import Request.
 Start importing Assets/Bringer Of Death/Sprite Sheet using Guid(19a87452f5a57214c96be3c04ed3be81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '796f8459a9af6b960e353f6dcdc90e19') in 0.011168 seconds 
   Import took 0.016204 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
