@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerrb;
+    private BoxCollider2D playerbc;
     private SpriteRenderer sprite;
     private Animator anim;
     private float xDir = 0f;
 
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private LayerMask groundlayer;
     
     private enum MovementState{idle,running,jumping,falling}
 
@@ -19,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerrb = GetComponent<Rigidbody2D>();
+        playerbc = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
@@ -27,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         xDir = Input.GetAxisRaw("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             playerrb.velocity = new Vector2(playerrb.velocity.x,moveSpeed);
         }
@@ -35,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
         AnimationChange();
     }
 
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(playerbc.bounds.center, playerbc.bounds.size,0f,Vector2.down,0.1f,groundlayer);
+    }
     private void AnimationChange()
     {
         MovementState state;
