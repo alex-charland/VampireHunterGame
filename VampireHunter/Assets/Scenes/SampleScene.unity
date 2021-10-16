@@ -278,7 +278,8 @@ GameObject:
   - component: {fileID: 1032946691}
   - component: {fileID: 1032946690}
   - component: {fileID: 1032946689}
-  m_Layer: 0
+  - component: {fileID: 1032946692}
+  m_Layer: 6
   m_Name: MedievalCastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1473,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -1858,6 +1859,25 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!251 &1032946692
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032946685}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1900308036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,6 +1893,7 @@ GameObject:
   - component: {fileID: 1900308041}
   - component: {fileID: 1900308042}
   - component: {fileID: 1900308043}
+  - component: {fileID: 1900308044}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2036,3 +2057,129 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  groundlayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &1900308044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900308036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b81d6134656af4290e7838d8ce6599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &6155386214487474048
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 435213492230061459, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_Name
+      value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 435213492230061459, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_TagString
+      value: HPItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5550988
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.4789451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902425029693520379, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+--- !u!1 &6155386214487474049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 435213492230061459, guid: ddbfcaa7bf486904fb37b2408eb88bae, type: 3}
+  m_PrefabInstance: {fileID: 6155386214487474048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6155386214487474050
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155386214487474049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 688f4ce74ed679d4cae911eabbdac1d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &6155386214487474051
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155386214487474049}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.018314958, y: -0.058608234}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.53333336, y: 0.53333336}
+    newSize: {x: 0.53333336, y: 0.53333336}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.26227045, y: 0.3282045}
+  m_EdgeRadius: 0
