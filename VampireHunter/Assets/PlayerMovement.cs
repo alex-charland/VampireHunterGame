@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
     private float xDir = 0f;
+    private bool isAttacking = false;
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private LayerMask groundlayer;
@@ -35,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
         {
             playerrb.velocity = new Vector2(playerrb.velocity.x,moveSpeed);
         }
+
+        if (Input.GetKeyDown(KeyCode.F) && IsGrounded())
+        {
+            AttackMode();
+        }
         playerrb.velocity = new Vector2(xDir * moveSpeed,playerrb.velocity.y);
         AnimationChange();
     }
@@ -48,19 +55,16 @@ public class PlayerMovement : MonoBehaviour
         MovementState state;
         if (xDir > 0f)
         {
-            //anim.SetBool("Running",true);
             state = MovementState.running;
             sprite.flipX = false;
         }
         else if(xDir < 0f)
         {
-            //anim.SetBool("Running", true);
             state = MovementState.running;
             sprite.flipX = true;
         }
         else
         {
-            //anim.SetBool("Running",false);
             state = MovementState.idle;
         }
 
@@ -74,4 +78,11 @@ public class PlayerMovement : MonoBehaviour
         }
         anim.SetInteger("State",(int)state);
     }
+
+    private void AttackMode()
+    {
+        anim.SetTrigger("Attack");
+    }
+
+    
 }
