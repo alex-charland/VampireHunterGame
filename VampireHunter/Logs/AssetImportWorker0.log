@@ -3418,3 +3418,4 @@ Received Import Request.
 Start importing Assets/Warrior free set/Aniamtion/Warrior.controller using Guid(312496b25d842af4a938e96c7d5aaee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c0e412fc28ad55d8b286e0e4a109f8') in 0.038823 seconds 
   Import took 0.093576 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
