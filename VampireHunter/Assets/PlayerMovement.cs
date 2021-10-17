@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
     private float xDir = 0f;
-    private bool isAttacking = false;
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private LayerMask groundlayer;

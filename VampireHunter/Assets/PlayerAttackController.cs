@@ -17,6 +17,7 @@ public class PlayerAttackController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetBool("canAttack",attackMode);
+        isFirstAttack = false;
     }
 
     private void Update()
