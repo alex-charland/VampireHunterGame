@@ -38,10 +38,10 @@ public class PlayerMovement : MonoBehaviour
             playerrb.velocity = new Vector2(playerrb.velocity.x,moveSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && IsGrounded())
-        {
-            AttackMode();
-        }
+        //if (Input.GetKeyDown(KeyCode.F) && IsGrounded())
+        //{
+            //AttackMode();
+        //}
         playerrb.velocity = new Vector2(xDir * moveSpeed,playerrb.velocity.y);
         AnimationChange();
     }
@@ -79,10 +79,10 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("State",(int)state);
     }
 
-    private void AttackMode()
-    {
-        anim.SetTrigger("Attack");
-    }
+    //private void AttackMode()
+    //{
+    //    anim.SetTrigger("Attack");
+    //}
 
     
 }
