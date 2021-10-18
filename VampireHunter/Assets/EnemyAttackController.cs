@@ -8,7 +8,7 @@ public class EnemyAttackController : MonoBehaviour
     private Animator anim;
     [SerializeField] private Transform attackBounds;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private int attackValue = 5;
+    [SerializeField] public int attackValue = 5;
 
     private void Start()
     {
