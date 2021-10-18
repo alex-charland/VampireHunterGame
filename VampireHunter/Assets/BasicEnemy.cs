@@ -6,15 +6,17 @@ public class BasicEnemy : MonoBehaviour
 {
     public int maxHealth = 30;
     public Animator anim;
-    private int currHealth;
+    public int currHealth = 0;
     private SpriteRenderer sprite;
     [SerializeField] public Transform player;
+    //[SerializeField] public EnemyHP hpBar;
     
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth;
         sprite = GetComponent<SpriteRenderer>();
+        //hpBar.SetHealth(currHealth,maxHealth);
     }
 
     public void FacePlayer()
@@ -31,6 +33,7 @@ public class BasicEnemy : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currHealth -= amount;
+        //hpBar.SetHealth(currHealth,maxHealth);
         anim.SetTrigger("Hurt");
         if (currHealth <= 0)
         {

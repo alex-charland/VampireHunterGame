@@ -66,7 +66,15 @@ public class PlayerAttackController : MonoBehaviour
         Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(attack1Bounds.position,attack1Radius,damageableLayer);
         foreach (Collider2D collider in objectsInRange)
         {
-            collider.GetComponent<BasicEnemy>().TakeDamage(attackValue);
+            if (collider.CompareTag("Enemy"))
+            {
+                collider.GetComponent<BasicEnemy>().TakeDamage(attackValue);
+            }
+            else if (collider.CompareTag("Boss"))
+            {
+                collider.GetComponent<BossEnemy>().TakeDamage(attackValue);
+            }
+            
         }
     }
 
