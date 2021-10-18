@@ -37,6 +37,7 @@ public class PlayerHP : MonoBehaviour
     public void Death()
     {
         anim.SetBool("hasDied",true);
+        anim.SetBool("canAttack",false);
         GetComponent<Rigidbody2D>().isKinematic = true;
         GetComponent<Collider2D>().enabled = false;
         
