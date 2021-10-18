@@ -10,7 +10,6 @@ public class EnemyHP : MonoBehaviour
 
     public Vector3 heightOffset;
 
-
     // Update is called once per frame
     public void Update()
     {

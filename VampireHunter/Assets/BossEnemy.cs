@@ -58,6 +58,7 @@ public class BossEnemy : MonoBehaviour
            anim.SetBool("hasDied",true);
            GetComponent<Collider2D>().enabled = false;
            this.enabled = false;
+           FindObjectOfType<GameManager>().WinGame();
            
        }
 }
