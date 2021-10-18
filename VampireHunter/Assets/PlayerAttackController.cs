@@ -7,11 +7,12 @@ public class PlayerAttackController : MonoBehaviour
 {
     [SerializeField] private bool attackMode;
     private bool attackStarted, isAttacking, isFirstAttack;
-    [SerializeField] private float inputTimer, attack1Radius, attack1Damage;
+    [SerializeField] private float inputTimer, attack1Radius;
     private float attackStartTime = Mathf.Infinity;
     private Animator anim;
     [SerializeField] private Transform attack1Bounds;
     [SerializeField] private LayerMask damageableLayer;
+    [SerializeField] private int attackValue = 5;
 
     private void Start()
     {
@@ -65,7 +66,7 @@ public class PlayerAttackController : MonoBehaviour
         Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(attack1Bounds.position,attack1Radius,damageableLayer);
         foreach (Collider2D collider in objectsInRange)
         {
-            collider.transform.parent.SendMessage("Damage",attack1Damage);
+            collider.GetComponent<BasicEnemy>().TakeDamage(attackValue);
         }
     }
 

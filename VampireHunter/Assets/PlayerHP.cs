@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class PlayerHP : MonoBehaviour
 {
+    public int maxHealth = 60;
+    public Animator anim;
+    private int currHealth;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        currHealth = maxHealth;
+    }
+    
+    public void TakeDamage(int amount)
+    {
+        currHealth -= amount;
+        anim.SetTrigger("Hurt");
+        if (currHealth <= 0)
+        {
+            Death();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Death()
     {
-        
+        anim.SetBool("hasDied",true);
+
     }
 }
