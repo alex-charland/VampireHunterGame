@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class BossEnemy : MonoBehaviour
        public Animator anim;
        private int currHealth;
        private SpriteRenderer sprite;
+       [SerializeField] private float sightRange = 10f;
        [SerializeField] public Transform player;
        
        // Start is called before the first frame update
@@ -37,7 +39,20 @@ public class BossEnemy : MonoBehaviour
                Death();
            }
        }
-   
+
+       public void FixedUpdate()
+       {
+           RaycastHit2D hit = Physics2D.Raycast(transform.position, player.position - transform.position, sightRange);
+           if (hit)
+           {
+               if (hit.collider.CompareTag("Player"))
+               {
+                   anim.SetBool("playerSighted", true);
+                   Debug.Log("player sighted");
+               }
+           }
+       }
+
        public void Death()
        {
            anim.SetBool("hasDied",true);
