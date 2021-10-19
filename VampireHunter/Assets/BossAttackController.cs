@@ -7,7 +7,7 @@ public class BossAttackController : MonoBehaviour
     [SerializeField] private float attackRadius;
     [SerializeField] private Transform attackBounds;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] public int attackValue = 5;
+    [SerializeField] public int attackValue = 15;
 
     private void CheckAttackHit()
     {

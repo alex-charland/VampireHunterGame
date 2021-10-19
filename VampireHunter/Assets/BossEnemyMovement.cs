@@ -21,14 +21,18 @@ public class BossEnemyMovement : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss.FacePlayer();
-        //Vector2 target = new Vector2(player.position.x, bossrb.position.y);
-        //Vector2 targetPos = Vector2.MoveTowards(bossrb.position, target, speed * Time.fixedDeltaTime);
-        //bossrb.MovePosition(targetPos);
-        if (Vector2.Distance(player.position, bossrb.position) <= attackRange)
+        if (animator.GetBool("playerSighted"))
         {
-            animator.SetTrigger("Attack");
+            boss.FacePlayer();
+            Vector2 target = new Vector2(player.position.x, bossrb.position.y);
+            Vector2 targetPos = Vector2.MoveTowards(bossrb.position, target, speed * Time.fixedDeltaTime);
+            bossrb.MovePosition(targetPos);
+            if (Vector2.Distance(player.position, bossrb.position) <= attackRange)
+            {
+                animator.SetTrigger("Attack");
+            }
         }
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
