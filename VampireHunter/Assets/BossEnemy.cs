@@ -3,23 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossEnemy : MonoBehaviour
+public class BossEnemy : Enemy
 {
-   public int maxHealth = 30;
-       public Animator anim;
-       private int currHealth;
-       private SpriteRenderer sprite;
-       [SerializeField] private float sightRange = 10f;
+    public Animator anim;
+    [SerializeField] private float sightRange = 10f;
        [SerializeField] public Transform player;
        
        // Start is called before the first frame update
        void Start()
        {
+           maxHealth = 100;
            currHealth = maxHealth;
            sprite = GetComponent<SpriteRenderer>();
        }
    
-       public void FacePlayer()
+       public override void FacePlayer()
        {
            if (transform.position.x > player.position.x)
            {
@@ -30,7 +28,7 @@ public class BossEnemy : MonoBehaviour
                sprite.flipX = false;
            }
        }
-       public void TakeDamage(int amount)
+       public override void TakeDamage(int amount)
        {
            currHealth -= amount;
            anim.SetTrigger("Hurt");
@@ -53,7 +51,7 @@ public class BossEnemy : MonoBehaviour
            }
        }
 
-       public void Death()
+       public override void Death()
        {
            anim.SetBool("hasDied",true);
            GetComponent<Collider2D>().enabled = false;
